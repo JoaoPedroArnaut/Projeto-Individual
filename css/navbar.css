@@ -39,8 +39,8 @@ a {
 }
 
 
-a.active,
-a:hover {
+.menu a.active,
+.menu a:hover {
     background-color: #f7a720;
     color: black;
     transition: .5s;

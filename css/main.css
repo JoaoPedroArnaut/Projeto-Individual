@@ -1,0 +1,10 @@
+.banner {
+    width: 80%;
+    
+}
+
+.banner img {
+    height: calc(100vh - 70px);
+    border-left: 3px dashed black;
+    border-right: 3px dashed black;
+}

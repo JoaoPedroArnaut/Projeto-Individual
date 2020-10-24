@@ -2,7 +2,7 @@ body {
     font-family: 'Syne Mono', monospace;
     display: grid;
     grid-template-areas: 'navbar' 'main' 'footer';
-    grid-template-rows: 70px auto auto;
+    grid-template-rows: 70px auto 70px;
     grid-template-columns: auto;
 }
 
@@ -14,8 +14,15 @@ body {
 
 .main {
     grid-area: main;
+    display: flex;
+    justify-content: space-around;
 }
 
 .footer {
     grid-area: footer;
+    background: #00BFFF;
+    border-top: 3px dashed black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
