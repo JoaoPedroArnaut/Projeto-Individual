@@ -1,0 +1,21 @@
+body {
+    font-family: 'Syne Mono', monospace;
+    display: grid;
+    grid-template-areas: 'navbar' 'main' 'footer';
+    grid-template-rows: 70px auto auto;
+    grid-template-columns: auto;
+}
+
+.navbar {
+    grid-area: navbar;
+    background: #00BFFF;
+    border-bottom: 3px dashed black;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
