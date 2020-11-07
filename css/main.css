@@ -12,35 +12,11 @@
     width: 990px;
     border: 3px dashed black;
     border-top: none;
+    flex-grow: 1;
 }
 /* banner end */
-/* titulo da seção */
-.titulo {
-    border-left: none;
-    border-right: none;
-    width: 80%;
-}
-
-.main .container {
-    display: flex;
-    justify-content: space-around;
-    border: 3px dashed black;
-    border-left: none;
-    border-right: none;
-}
-/* noticias */
-.noticias {
-    display: flex;
-    justify-content: space-around;
-}
-
-.noticiasConteudo {
-    width: 80%;
-    display: flex;
-    justify-content: space-around;
-}
-
-.noticiasCard {
+/* card pardrao */
+.card {
     background: #fdfdfd;
     display: grid;
     grid-template-areas: 
@@ -54,36 +30,67 @@
     margin: 10px 0;
 }
 
-.noticiasCardImagem {
+.cardImagem {
     grid-area: card-imagem;
     width: 100%;
 }
 
-.noticiasCardCorpo {
+.cardCorpo {
     display: grid;
     grid-area: card-corpo;
-    grid-row-gap: .5rem;
+    grid-row-gap: 1rem;
     grid-template-areas: 
         "card-cabecalho"
-        "card-conteudo";
-    grid-template-rows: 60px auto;
+        "card-conteudo"
+        "card-rodape";
+    grid-template-rows: max-content auto 10px;
     padding: .75rem;
 }
 
-.noticiasCardDescricao {
-    display: flex;
-    flex-wrap: wrap;
+.cardDescricao {
     grid-area: card-conteudo;
-    padding: 1rem 0rem;
     color: #333333;
     line-height: 1.5;
-    margin: 1rem 0;
     text-align: justify;
 }
 
-.noticiasCardTitulo {
+.cardTitulo {
     color: #333333;
     font-size: 1.5rem;
+}
+
+.cardRodape {
+    color: #6f00ff;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+/* card padrao end */
+/* titulo da seção */
+.titulo {
+    border-left: none;
+    border-right: none;
+    width: 80%;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+
+.tituloBox {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 3px dashed black;
+}
+
+/* titulo da seção end*/
+/* noticias */
+.noticias {
+    display: flex;
+    justify-content: space-around;
+}
+
+.noticiasConteudo {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .noticiaImg1 {
@@ -100,3 +107,32 @@
     background: url(../img/noticia3.jpg) no-repeat center;
     background-size: contain;
 }
+
+/* noticias end*/
+/* ultimos episodios */
+.episodios {
+    display: flex;
+    justify-content: space-around;
+}
+.episodiosConteudo {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.episodioimg1{
+    background: url(../img/episodio948.jpg) no-repeat center;
+    background-size: contain;
+}
+
+.episodioimg2{
+    background: url(../img/episodio947.jpg) no-repeat center;
+    background-size: contain;
+}
+
+.episodioimg3{
+    background: url(../img/episodio946.jpg) no-repeat center;
+    background-size: cover;
+}
+
+
