@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+.main .container {
+    display: flex;
+    justify-content: space-around;
+    background: url(../img/Sky-Backgrounds-.jpg) no-repeat;
+    background-size: cover;
+} 
+
+.mainBox {
+    margin: 10px 0;
+    width: 500px;
+    height: 500px;
+    background-color: #e4ede3;
+    border-radius: 30px;
+    padding: 25px;
+    line-height: 2rem;
+    /* display: flex;
+    justify-content: space-around; */
+}
+
+.mainBox input {
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid #363636;
+    font-size: .9rem;
+}
+
+.mainBox label {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+.mainBox input:focus,
+.mainBox label:focus {
+    outline: none;
+}
+
+.mainBox h2 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.formCadastro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.fullBox {
+    flex: 1 1 100%;
+    position: relative;
+}
+
+.halfBox {
+    flex: 1 1 45%
+}
+
+.spacing {
+    margin: 2.5%;
+}
