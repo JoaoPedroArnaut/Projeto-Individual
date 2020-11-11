@@ -19,7 +19,7 @@
     line-height: 2rem;
 }
 
-.halfBox input,.fullBox input {
+.halfBox input,.fullBox input,.avatarSelect input {
     display: block;
     width: 100%;
     border-bottom: 2px solid #363636;
@@ -32,8 +32,8 @@
     display: block;
     width: 100%;
     font-weight: bold;
-    font-size: .8rem;
-    margin-bottom: -10px;
+    font-size: .9rem;
+    /* margin-bottom: -10px; */
     padding-left: 10px;
 }
 
@@ -56,10 +56,12 @@
 .fullBox {
     flex: 0 1 95%;
     position: relative;
+    line-height: 1rem;
 }
 
 .halfBox {
-    flex: 0 1 45%
+    flex: 0 1 45%;
+    line-height: 1rem;
 }
 
 .spacing {
@@ -73,4 +75,27 @@
     border: 2px solid black;
     background-color: #b7231f;
     border-radius: 3px;
+}
+
+.botao:hover {
+    background-color: #f7a720;
+    color: black;
+    transition: .5s;
+}
+
+.avatarSelect {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+}
+
+.avatarSelect img {
+    width: 100px;
+}
+
+.avatares {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
