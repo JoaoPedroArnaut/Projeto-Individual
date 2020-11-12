@@ -1,0 +1,8 @@
+.main .container {
+    width: 900px;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+}
