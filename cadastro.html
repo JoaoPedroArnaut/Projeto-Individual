@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/cadastro.css">
 </head>
+
 <body>
     <header class="navbar">
         <div class="container">
@@ -20,7 +22,7 @@
             <ul class="menu">
                 <li><a href="#">Notícias</a></li>
                 <li><a href="#">Episódios</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="login.html">Login</a></li>
             </ul>
         </div>
     </header>
@@ -31,10 +33,13 @@
                 <form class="formCadastro">
                     <label for="">Escolha seu avatar:</label>
                     <div class="avatarSelect">
-                        <div class="avatares"><img src="img/avatares/luffy.jpg" alt=""><input type="radio" name="avatar"></div>
-                        <div class="avatares"><img src="img/avatares/zoro.jpg" alt=""><input type="radio" name="avatar"></div>
-                        <div class="avatares"><img src="img/avatares/Sanji.png" alt=""><input type="radio" name="avatar"></div>
-                    </div>   
+                        <div class="avatares"><img src="img/avatares/luffy.jpg" alt=""><input type="radio" name="avatar"
+                                checked></div>
+                        <div class="avatares"><img src="img/avatares/zoro.jpg" alt=""><input type="radio" name="avatar">
+                        </div>
+                        <div class="avatares"><img src="img/avatares/Sanji.png" alt=""><input type="radio"
+                                name="avatar"></div>
+                    </div>
                     <div class="halfBox spacing">
                         <label for="usuario">Nome de Usuario:</label>
                         <input type="text" id="usuario" placeholder="Exemplo: Luffy">
@@ -59,14 +64,24 @@
                         <label for="comfirmacaoSenha">Comfirme sua senha:</label>
                         <input type="password" id="comfirmacaoSenha" placeholder="Exemplo: #suasenha123">
                     </div>
-                    <input type="submit" class="botao" value="cadastrar-se">
+                    <div class="fullBox">
+                        <div class="termosDeUsoBox">
+                            <input type="checkbox" name="termosDeUso" id="termosDeUso">
+                            <label for="termosDeUso" id="termosDeUso-label">
+                                Eu li e Aceito os <a href="#">termos de uso</a>
+                            </label>
+                        </div>
+                    </div>
+                    <input type="submit" class="botao" value="cadastrar-se" id="cadastra">
                 </form>
             </div>
-            
+
         </div>
     </main>
     <footer class="footer">
         <div>&copy; Todos os direitos reservado aos Mugiwara</div>
     </footer>
 </body>
+
 </html>
+<script src="js/validacaoCadastro.js"></script>

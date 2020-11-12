@@ -2,7 +2,7 @@ body {
     font-family: 'Syne Mono', monospace;
     display: grid;
     grid-template-areas: 'navbar' 'main' 'footer';
-    grid-template-rows: 70px auto 70px;
+    grid-template-rows: 70px minmax(calc(100vh - 70px),auto) 70px;
     grid-template-columns: auto;
 }
 

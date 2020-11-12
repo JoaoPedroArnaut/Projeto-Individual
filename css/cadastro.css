@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-.main .container {
+.main {
     display: flex;
     justify-content: space-around;
     background: url(../img/Sky-Backgrounds-.jpg) no-repeat;
@@ -12,7 +12,6 @@
 .mainBox {
     margin: 10px 0;
     width: 500px;
-    height: 500px;
     background-color: #e4ede3;
     border-radius: 30px;
     padding: 25px;
@@ -33,7 +32,6 @@
     width: 100%;
     font-weight: bold;
     font-size: .9rem;
-    /* margin-bottom: -10px; */
     padding-left: 10px;
 }
 
@@ -95,6 +93,24 @@
 }
 
 .avatares {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.termosDeUsoBox {
+    display: flex;
+    padding: 10px 0;
+}
+.termosDeUsoBox a {
+    color: blueviolet;
+    text-decoration: underline;
+}
+#termosDeUso {
+    width: min-content;
+}
+
+.login {
     display: flex;
     flex-direction: column;
     align-items: center;
