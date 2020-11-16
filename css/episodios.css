@@ -1,8 +1,46 @@
 .main .container {
-    width: 900px;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .main {
     display: flex;
     justify-content: space-around;
+}
+
+td,th {
+    padding: 5px;
+    text-align: center;
+    border: 3px dashed black;
+}
+
+table {
+    margin: 20px 0;
+}
+
+
+
+tr {
+    border: 3px dashed black;
+}
+
+thead {
+    background-color: #00BFFF;
+    font-weight: 200;
+    font-size: 1.2rem;
+}
+
+.cannon {
+    background-color: green;
+    color: #e4ede3;
+}
+
+.filler {
+    background-color: #b7231f;
+    color:  #e4ede3;
+}
+
+.numeroEp {
+    background-color: #f7a720;
 }
