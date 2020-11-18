@@ -45,7 +45,7 @@
     text-align: center;
 }
 
-.formCadastro {
+.form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -114,4 +114,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#menssagemErro {
+    color: red;
+    background-color: rosybrown;
+    padding: 3px 7px;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.invisivel {
+    display: none;
 }

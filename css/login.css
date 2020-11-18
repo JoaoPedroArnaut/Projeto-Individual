@@ -14,3 +14,7 @@
     background: url(../img/Sky-Backgrounds-.jpg) no-repeat;
     background-size: cover;
 } 
+
+#menssagemErro {
+    margin: 5px 0;
+}

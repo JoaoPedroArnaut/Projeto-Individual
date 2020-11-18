@@ -30,31 +30,31 @@
         <div class="container">
             <div class="mainBox">
                 <h2>Crie sua conta:</h2>
-                <form class="formCadastro">
+                <ul id="menssagemErro" class="invisivel">
+                </ul>
+                <form class="form">
                     <label for="">Escolha seu avatar:</label>
                     <div class="avatarSelect">
-                        <div class="avatares"><img src="img/avatares/luffy.jpg" alt=""><input type="radio" name="avatar"
-                                checked></div>
-                        <div class="avatares"><img src="img/avatares/zoro.jpg" alt=""><input type="radio" name="avatar">
+                        <div class="avatares"><img src="img/avatares/luffy.jpg" alt=""><input type="radio" name="avatar" value="1" checked></div>
+                        <div class="avatares"><img src="img/avatares/zoro.jpg" alt=""><input type="radio" value="2" name="avatar">
                         </div>
-                        <div class="avatares"><img src="img/avatares/Sanji.png" alt=""><input type="radio"
-                                name="avatar"></div>
+                        <div class="avatares"><img src="img/avatares/Sanji.png" alt=""><input type="radio" value="3" name="avatar"></div>
                     </div>
                     <div class="halfBox spacing">
-                        <label for="usuario">Nome de Usuario:</label>
-                        <input type="text" id="usuario" placeholder="Exemplo: Luffy">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" placeholder="Exemplo: Monkey d. Luffy">
                     </div>
                     <div class="halfBox spacing">
-                        <label for="telefone">Telefone:</label>
-                        <input type="cel" id="telefone" placeholder="Exemplo: (xx)xxxxx-xxxx">
+                        <label for="apelido">Apelido:</label>
+                        <input type="text" id="apelido" placeholder="Exemplo: Chapéu de palha">
                     </div>
                     <div class="fullBox spacing">
                         <label for="email">Digite seu email:</label>
-                        <input type="email" id="email" placeholder="Exemplo: seu@email.com">
+                        <input type="text" id="email" placeholder="Exemplo: seu@email.com">
                     </div>
                     <div class="fullBox spacing">
                         <label for="comfirmacaoEmail">Confirme seu email:</label>
-                        <input type="email" id="comfirmacaoEmail" placeholder="Exemplo: seu@email.com">
+                        <input type="text" id="comfirmacaoEmail" placeholder="Exemplo: seu@email.com">
                     </div>
                     <div class="halfBox spacing">
                         <label for="senha">Digite sua senha:</label>
