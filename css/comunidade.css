@@ -1,0 +1,86 @@
+.menssagem {
+    margin-top: 15px;
+    width: 100%;
+    height: fit-content;
+}
+
+form {
+    display: flex;
+}
+
+.main img {
+    width: 100px;
+    margin-right: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.menssagem textarea {
+    height: 94px;
+    width: 100%;
+    border-radius: 0 25px 25px 25px;
+    border: 2px solid black;
+}
+
+.balaoComentario {
+    height: fit-content;
+    padding: 10px;
+    border-radius: 0 25px 25px 25px;
+    border: 2px solid black;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: fit-content;
+}
+
+.main .container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.botao {
+    width: 100px;
+    height: 100px;
+    color: #e4ede3;
+    border: 2px solid black;
+    background-color: #b7231f;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.botao:hover {
+    background-color: #f7a720;
+    color: black;
+    transition: .5s;
+}
+
+.comentario {
+    display: flex;
+    height: fit-content;
+}
+
+.novaMenssagem {
+    width: 100%;
+}
+
+.menssagensAnteriores {
+    width: 100%;
+}
+
+.titulo {
+    width: 100%;
+    border-bottom: 3px dashed black;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+}
+
+#gambiarra {
+    margin: 0;
+}
