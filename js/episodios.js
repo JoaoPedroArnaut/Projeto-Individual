@@ -1,20 +1,27 @@
+
 var requisicoes = [];
 for (var i = 1; i <= 10; i++) {
    var requisicao = fetch(`https://api.jikan.moe/v3/anime/21/episodes/${i}`);
    requisicoes.push(requisicao);
 }
-
-
-var episodios = []
+console.log();
+var ep = [1,2]
 Promise.all(requisicoes)
 .then(function (resposta) {
-  return resposta[0].json();
-}).then(function (dados) {
+  return Promise.all(resposta.map(function (response) {
+		return response.json();
+	}));
+})
+.then(function (dados) {
   console.log(dados);
-  var episodios = dados.episodes;
+  for(var i = 0;i < dados.length;i++){
+    var episodios = dados[i].episodes;
   episodios.forEach(episodio => {
     montaTabela(episodio)
   })
+  }
+  
+  
 })
 
 
