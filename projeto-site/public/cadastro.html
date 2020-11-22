@@ -32,7 +32,7 @@
                 <h2>Crie sua conta:</h2>
                 <ul id="menssagemErro" class="invisivel">
                 </ul>
-                <form class="form">
+                <form id="form_cadastro" method="post" onsubmit="return cadastrar()" class="form">
                     <label for="">Escolha seu avatar:</label>
                     <div class="avatarSelect">
                         <div class="avatares"><img src="img/avatares/luffy.jpg" alt=""><input type="radio" name="avatar" value="1" checked></div>
@@ -42,15 +42,15 @@
                     </div>
                     <div class="halfBox spacing">
                         <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" placeholder="Exemplo: Monkey d. Luffy">
+                        <input type="text" name="nome" placeholder="Exemplo: Monkey d. Luffy">
                     </div>
                     <div class="halfBox spacing">
                         <label for="apelido">Apelido:</label>
-                        <input type="text" id="apelido" placeholder="Exemplo: Chapéu de palha">
+                        <input type="text" name="apelido" placeholder="Exemplo: Chapéu de palha">
                     </div>
                     <div class="fullBox spacing">
                         <label for="email">Digite seu email:</label>
-                        <input type="text" id="email" placeholder="Exemplo: seu@email.com">
+                        <input type="text" name="email" placeholder="Exemplo: seu@email.com">
                     </div>
                     <div class="fullBox spacing">
                         <label for="comfirmacaoEmail">Confirme seu email:</label>
@@ -58,7 +58,7 @@
                     </div>
                     <div class="halfBox spacing">
                         <label for="senha">Digite sua senha:</label>
-                        <input type="password" id="senha" placeholder="Exemplo: #suasenha123">
+                        <input type="password" name="senha" placeholder="Exemplo: #suasenha123">
                     </div>
                     <div class="halfBox spacing">
                         <label for="comfirmacaoSenha">Comfirme sua senha:</label>
@@ -85,3 +85,29 @@
 
 </html>
 <script src="js/validacaoCadastro.js"></script>
+<script>
+
+    function cadastrar() {
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                window.location.href='login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+</script>

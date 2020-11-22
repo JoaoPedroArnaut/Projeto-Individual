@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/cadastro.css">
     <link rel="stylesheet" href="css/login.css">
+    <script src="https://kit.fontawesome.com/48b24e7021.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="navbar">
@@ -32,17 +33,16 @@
                     <img src="img/Caveira Chapeu de Palha vetor.png" alt="">
                     <h1><a href="index.html">Os Mugiwara</a></h1>
                 </div>
-                <ul id="menssagemErro" class="invisivel"></ul>
-                <form class="form">
+                <form id="form_login" method="post" onsubmit="return entrar()" class="form" >
                     <div class="fullBox spacing">
                         <label for="email">Digite seu email:</label>
-                        <input type="email" id="email" placeholder="Exemplo: seu@email.com">
+                        <input type="text" id="email" name="email" placeholder="Exemplo: seu@email.com">
                     </div>
                     <div class="fullBox spacing">
                         <label for="senha">Confirme sua senha:</label>
-                        <input type="password" id="senha" placeholder="Exemplo: #suasenha123">
+                        <input type="password" id="senha" name="senha" placeholder="Exemplo: #suasenha123">
                     </div>
-                    <input type="submit" id="entrar" class="botao" value="entrar">
+                    <input type="submit" id="btn_entrar" class="botao" value="entrar">
                 </form>
             </div>
         </div>
@@ -52,4 +52,51 @@
     </footer>
 </body>
 </html>
-<script src="js/validacaoLogin.js"></script>
+<script>
+
+    function entrar() {
+
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.email;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = 'comunidade.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.visibility = 'visible';
+        div_erro.style.visibility = 'hidden';
+    }
+
+    function finalizar_aguardar(resposta) {
+        btn_entrar.disabled = false;
+        img_aguarde.style.visibility = 'hidden';
+        div_erro.style.visibility = 'visible';
+        div_erro.innerHTML = resposta;
+    }
+
+</script>

@@ -2,8 +2,6 @@ var form = document.querySelector('form');
 
 var ul = document.querySelector('#menssagemErro')
 form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    console.log(form);
     var usuario = cadastro(form);
     console.log(usuario);
     var erros = validaUsuario(usuario);
