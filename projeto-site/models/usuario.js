@@ -12,6 +12,11 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.INTEGER,
 			primaryKey: true,
 			autoIncrement: true
+		},
+		avatar: {
+			field: 'avatar',
+			type: DataTypes.STRING,
+			allowNull: false
 		},		
 		nome: {
 			field: 'nome',

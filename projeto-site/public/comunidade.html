@@ -8,10 +8,18 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/comunidade.css">
+    <script type="text/javascript" src="js/funcoes.js"></script>
     <title>Document</title>
 </head>
+<script>
 
-<body>
+    let usuario;
+
+    verificar_autenticacao();
+
+    
+</script>
+<body onload="verificar_autenticacao()">
     <header class="navbar">
         <div class="container">
             <div class="logo">
@@ -21,7 +29,7 @@
             <ul class="menu">
                 <li><a href="noticias.html">Notícias</a></li>
                 <li><a href="episodios.html">Episódios</a></li>
-                <li><a href="login.html">Sair</a></li>
+                <li><a onclick="logoff()">Sair</a></li>
             </ul>
         </div>
     </header>
@@ -30,7 +38,10 @@
             <div class="menssagem">
                 <form>
                 <img id="img" src="img/avatares/luffy.jpg" alt="">
-                <textarea id="msg" name="" id="" cols="30" rows="5"></textarea>
+                <div class="perfil">
+                    <label id="b_usuario" for="msg"></label>
+                    <textarea id="msg" name="msg" cols="30" rows="5"></textarea>
+                </div>
                 <button class="botao">enviar</button>
                 </form>
             </div>

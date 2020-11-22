@@ -1,7 +1,9 @@
 var form = document.querySelector('form');
 
 var ul = document.querySelector('#menssagemErro')
-form.addEventListener("submit", function (e) {
+
+
+function verficação(form,ul) {
     var usuario = cadastro(form);
     console.log(usuario);
     var erros = validaUsuario(usuario);
@@ -11,7 +13,7 @@ form.addEventListener("submit", function (e) {
     } else {
         ul.classList.add('invisivel');
     }
-})
+}
 
 function cadastro(form) {
     var novoUsuario = {

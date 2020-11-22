@@ -15,8 +15,13 @@ form {
     border-radius: 10px;
 }
 
+.perfil {
+    width: 100%;
+    margin-right: 10px;
+}
+
 .menssagem textarea {
-    height: 94px;
+    height: calc() ;
     width: 100%;
     border-radius: 0 25px 25px 25px;
     border: 2px solid black;
