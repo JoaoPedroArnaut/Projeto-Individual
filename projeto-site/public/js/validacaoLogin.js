@@ -12,8 +12,41 @@ form.addEventListener("submit", function (e) {
         return;
     } else {
         ul.classList.add('invisivel');
+        entrar();
     }
 })
+
+function entrar() {
+
+    var formulario = new URLSearchParams(new FormData(form_login));
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        body: formulario
+    }).then(resposta => {
+
+        if (resposta.ok) {
+
+            resposta.json().then(json => {
+
+                sessionStorage.login_usuario_meuapp = json.email;
+                sessionStorage.nome_usuario_meuapp = json.nome;
+
+                window.location.href = 'comunidade.html';
+            });
+
+        } else {
+
+            console.log('Erro de login!');
+
+            resposta.text().then(texto => {
+                console.error(texto);
+                finalizar_aguardar(texto);
+            });
+        }
+    });
+
+    return false;
+}
 
 function cadastro(form) {
     var novoUsuario = {

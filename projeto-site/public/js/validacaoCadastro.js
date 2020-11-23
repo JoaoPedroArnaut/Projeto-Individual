@@ -3,7 +3,8 @@ var form = document.querySelector('form');
 var ul = document.querySelector('#menssagemErro')
 
 
-function verficação(form,ul) {
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
     var usuario = cadastro(form);
     console.log(usuario);
     var erros = validaUsuario(usuario);
@@ -12,8 +13,9 @@ function verficação(form,ul) {
         return;
     } else {
         ul.classList.add('invisivel');
+        cadastrar();
     }
-}
+});
 
 function cadastro(form) {
     var novoUsuario = {
@@ -26,6 +28,30 @@ function cadastro(form) {
         comfirmacaoSenha: form.comfirmacaoSenha.value,
     }
     return novoUsuario;
+}
+
+function cadastrar() {
+    var formulario = new URLSearchParams(new FormData(form_cadastro));
+    fetch("/usuarios/cadastrar", {
+        method: "POST",
+        body: formulario
+    }).then(function (response) {
+        
+        if (response.ok) {
+
+            window.location.href='login.html';
+
+        } else {
+
+            console.log('Erro de cadastro!');
+            response.text().then(function (resposta) {
+                div_erro.innerHTML = resposta;
+            });
+            finalizar_aguardar();
+        }
+    });
+
+    return false;
 }
 
 function validaUsuario(usuario) {

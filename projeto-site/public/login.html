@@ -33,7 +33,8 @@
                     <img src="img/Caveira Chapeu de Palha vetor.png" alt="">
                     <h1><a href="index.html">Os Mugiwara</a></h1>
                 </div>
-                <form id="form_login" method="post" onsubmit="return entrar()" class="form" >
+                <ul id="menssagemErro" class="invisivel"></ul>
+                <form id="form_login" method="post" class="form" >
                     <div class="fullBox spacing">
                         <label for="email">Digite seu email:</label>
                         <input type="text" id="email" name="email" placeholder="Exemplo: seu@email.com">
@@ -52,51 +53,4 @@
     </footer>
 </body>
 </html>
-<script>
-
-    function entrar() {
-
-        var formulario = new URLSearchParams(new FormData(form_login));
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            body: formulario
-        }).then(resposta => {
-
-            if (resposta.ok) {
-
-                resposta.json().then(json => {
-
-                    sessionStorage.login_usuario_meuapp = json.email;
-                    sessionStorage.nome_usuario_meuapp = json.nome;
-
-                    window.location.href = 'comunidade.html';
-                });
-
-            } else {
-
-                console.log('Erro de login!');
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizar_aguardar(texto);
-                });
-            }
-        });
-
-        return false;
-    }
-
-    function aguardar() {
-        btn_entrar.disabled = true;
-        img_aguarde.style.visibility = 'visible';
-        div_erro.style.visibility = 'hidden';
-    }
-
-    function finalizar_aguardar(resposta) {
-        btn_entrar.disabled = false;
-        img_aguarde.style.visibility = 'hidden';
-        div_erro.style.visibility = 'visible';
-        div_erro.innerHTML = resposta;
-    }
-
-</script>
+<script src="js/validacaoLogin.js"></script>
