@@ -5,6 +5,7 @@ form.addEventListener('submit', function (e) {
     montaMsg(form);
 });
 
+
 function montaMsg(form){
     var divContainer = document.createElement('div');
     divContainer.classList.add('container');

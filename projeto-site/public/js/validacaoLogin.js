@@ -28,9 +28,11 @@ function entrar() {
         if (resposta.ok) {
 
             resposta.json().then(json => {
-
+                
+                sessionStorage.id_usuario_meuapp = json.id;
                 sessionStorage.login_usuario_meuapp = json.email;
-                sessionStorage.nome_usuario_meuapp = json.nome;
+                sessionStorage.nome_usuario_meuapp = json.apelido;
+                sessionStorage.avatar_usuario_meuapp = json.avatar;
 
                 window.location.href = 'comunidade.html';
             });

@@ -2,10 +2,12 @@
     margin-top: 15px;
     width: 100%;
     height: fit-content;
+    display: flex;
 }
 
 form {
     display: flex;
+    width: 100%;
 }
 
 .main img {

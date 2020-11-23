@@ -4,6 +4,7 @@
 
 .main {
     display: flex;
+    align-items: center;
     justify-content: space-around;
     background: url(../img/Sky-Backgrounds-.jpg) no-repeat;
     background-size: cover;
