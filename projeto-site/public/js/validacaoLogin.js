@@ -1,5 +1,6 @@
 var form = document.querySelector('form');
-var ul = document.querySelector('#menssagemErro')
+var ul = document.querySelector('#menssagemErro');
+var erro = [];
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -37,10 +38,10 @@ function entrar() {
         } else {
 
             console.log('Erro de login!');
-
             resposta.text().then(texto => {
                 console.error(texto);
-                finalizar_aguardar(texto);
+                erro.push(texto);
+                exibeErro(erro);
             });
         }
     });
@@ -57,7 +58,7 @@ function cadastro(form) {
 }
 
 function validaUsuario(usuario) {
-    var erro = [];
+    erro = [];
 
     if (usuario.email == '') {
         erro.push('O email não pode estar em branco.');

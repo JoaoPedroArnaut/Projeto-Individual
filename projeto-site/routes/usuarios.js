@@ -25,7 +25,7 @@ router.post('/autenticar', function(req, res, next) {
 			console.log('sessoes: ',sessoes);
 			res.json(resultado[0]);
 		} else if (resultado.length == 0) {
-			res.status(403).sed('email e/ou senha inválido(s)');
+			res.status(403).send('email e/ou senha inválido(s)');
 		} else {
 			res.status(403).send('Mais de um usuário com o mesmo email e senha!');
 		}
