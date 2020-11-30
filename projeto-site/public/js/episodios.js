@@ -1,31 +1,61 @@
-
 var requisicoes = [];
 for (var i = 1; i <= 10; i++) {
-   var requisicao = fetch(`https://api.jikan.moe/v3/anime/21/episodes/${i}`);
-   requisicoes.push(requisicao);
+  var requisicao = fetch(`https://api.jikan.moe/v3/anime/21/episodes/${i}`);
+  requisicoes.push(requisicao);
 }
+
+var tabela = document.querySelectorAll('td');
+var teste = []
+
 Promise.all(requisicoes)
-.then(function (respostas) {
-  return Promise.all(respostas.map(function (resposta) {
-		return resposta.json();
-	}));
-})
-.then(function (dados) {
-  console.log(dados);
-  for(var i = 0;i < dados.length;i++){
-    var episodios = dados[i].episodes;
-  episodios.forEach(episodio => {
-    montaTabela(episodio)
+  .then(function (respostas) {
+    console.log(respostas);
+    return Promise.all(respostas.map(function (resposta) {
+      return resposta.json();
+    }));
   })
+  .then(function (dados) {
+    for (var i = 0; i < dados.length; i++) {
+      teste.push(dados[i].episodes)
+    }
+    console.log(teste);
+  }).then(function () {
+    tabelaCrecente(teste);
+  })
+
+function tabelaCrecente(teste) {
+  var elemento = document.getElementById("tabela");
+  while (elemento.firstChild) {
+    elemento.removeChild(elemento.firstChild);
   }
-  
-  
-})
+  for (var i = 0; i < teste.length; i++) {
+    var episodios = teste[i];
+    for (var ii = 0; ii < episodios.length; ii++) {
+      montaTabela(episodios[ii])
+    }
+  }
+}
+
+tabelaCrecente(teste);
+
+function tabelaDecresente(teste) {
+  var elemento = document.getElementById("tabela");
+  while (elemento.firstChild) {
+    elemento.removeChild(elemento.firstChild);
+  }
+  for (var i = (teste.length - 1); i >= 0; i--) {
+    var episodios = teste[i];
+    for (var ii = (episodios.length - 1); ii >= 0; ii--) {
+      montaTabela(episodios[ii])
+    }
+  }
+}
+
 
 function montaTabela(episodes) {
   var episodesTr = montaTr(episodes);
 
-  var tabela = document.querySelector('table');
+  var tabela = document.querySelector('tbody');
   tabela.appendChild(episodesTr);
 }
 

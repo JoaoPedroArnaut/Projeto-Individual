@@ -1,7 +1,8 @@
 .main .container {
     width: 80%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main {
@@ -15,8 +16,8 @@ td,th {
     border: 3px dashed black;
 }
 
-table {
-    margin: 20px 0;
+.controler {
+    margin: 20px 0 5px 0;
 }
 
 
@@ -43,4 +44,9 @@ thead {
 
 .numeroEp {
     background-color: #f7a720;
+}
+
+.botao {
+    height: 1.5rem;
+    width: 150px;
 }

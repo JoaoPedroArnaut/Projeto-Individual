@@ -50,25 +50,16 @@ form {
     margin-bottom: 20px;
 }
 
-.botao {
-    width: 100px;
-    height: 100px;
-    color: #e4ede3;
-    border: 2px solid black;
-    background-color: #b7231f;
-    border-radius: 10px;
-    margin-left: 5px;
-}
-
-.botao:hover {
-    background-color: #f7a720;
-    color: black;
-    transition: .5s;
-}
-
 .comentario {
     display: flex;
     height: fit-content;
+}
+
+.comentarios {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .novaMenssagem {
@@ -86,6 +77,10 @@ form {
     display: flex;
     justify-content: space-around;
     font-size: 1.5rem;
+}
+
+label {
+    height: min-content;
 }
 
 #gambiarra {

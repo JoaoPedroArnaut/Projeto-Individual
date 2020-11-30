@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de episodios</title>
     <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/episodios.css">
+    <link rel="shortcut icon" href="img/Caveira Chapeu de Palha vetor.ico">
 </head>
 
 <body>
@@ -28,13 +29,18 @@
     </header>
     <main class="main">
         <div class="container">
+            <div class="controler">
+                ordernar por: 
+                <button class="botao" onclick="tabelaCrecente(teste);">Ordem Crecente</button>
+                <button class="botao" onclick="tabelaDecresente(teste);">Ordem Decrecente</button> 
+            </div>
             <table>
                 <thead>
                     <th>#</th>
                     <th>Episódios</th>
                     <th>Fillers</th>
                 </thead>
-                <tbody>
+                <tbody id="tabela">
 
                 </tbody>
             </table>

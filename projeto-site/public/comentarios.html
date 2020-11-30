@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/comunidade.css">
+    <link rel="stylesheet" href="css/comentarios.css">
     <script type="text/javascript" src="js/funcoes.js"></script>
-    <title>Document</title>
+    <link rel="shortcut icon" href="img/Caveira Chapeu de Palha vetor.ico">
+    <title>Comentarios</title>
 </head>
 <script>
 
@@ -33,25 +34,24 @@
             </ul>
         </div>
     </header>
-    <main class="main">
+    <main class="main" onload="buscaComentarios();">
         <div class="container">
             <div class="menssagem">
                 <form id="formComentario">
-                <img id="img" src="img/avatares/luffy.jpg" alt="">
+                    <input id='avatar' name="avatar" style="display: none;">
+                    <input id='apelido' name="apelido" style="display: none;">
+                    <img id="img" src="img/avatares/luffy.jpg" alt="">
                 <div class="perfil">
                     <label id="username" for="msg"></label>
                     <textarea id="msg" name="msg" cols="30" rows="5"></textarea>
                 </div>
                 <button class="botao">enviar</button>
-                </form>
+            </form>
             </div>
         </div>
         <div class="titulo"><div class="container" id="gambiarra">Comentarios anteriores</div></div>
-        <div class="container">
-            <div class="comentario">
-                <img src="" alt="">
-                <div class="balaoComentario">um comentario</div>
-            </div>
+        <div id="comentarios" class="comentarios">
+
         </div>
     </main>
     <footer class="footer">
@@ -60,4 +60,4 @@
 </body>
 
 </html>
-<script src="js/comentario.js"></script>
+<script src="js/comentario.js" onload="buscaComentarios();"></script>

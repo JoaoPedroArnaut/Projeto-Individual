@@ -11,14 +11,16 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.TEXT,
 			allowNull: false
         },
-        fkUsuario: {
-			field: 'fkUsuario',
+        avatar: {
+			field: 'avatar',
 			type: DataTypes.INTEGER,
             allowNull: false,
-            references: { model: 'usuario', key: 'id'},
-            onUpdate: 'CASCADE',
-            onDelete: 'CASCADE'
 		},
+		apelido: {
+			field: 'apelido',
+			type: DataTypes.STRING,
+			allowNull: false
+		}
 	}, 
 	{
 		tableName: 'Comentarios', 
@@ -26,6 +28,5 @@ module.exports = (sequelize, DataTypes) => {
 		underscored: true,
 		timestamps: false,
 	});
-
-    return Comentarios;
+	return Comentarios;
 };

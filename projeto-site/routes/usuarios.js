@@ -108,10 +108,5 @@ router.get('/', function(req, res, next) {
   	});
 });
 
-router.post('/comentario', function(req, res, next) {
-	Usuario.findAll().then(teste => {
-		return res.json(teste);
-	})
-});
 
 module.exports = router;

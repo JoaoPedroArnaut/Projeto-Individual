@@ -9,7 +9,7 @@ function redirecionar_login() {
 }
 
 function verificar_autenticacao() {
-    id_usuario = sessionStorage.id_usuario_meuapp = json.id;
+    
     login_usuario = sessionStorage.login_usuario_meuapp;
     nome_usuario = sessionStorage.nome_usuario_meuapp;
     avatar_usuario = sessionStorage.avatar_usuario_meuapp
@@ -17,6 +17,8 @@ function verificar_autenticacao() {
     if (login_usuario == undefined)  {
         redirecionar_login();
     } else {
+        avatar.value = avatar_usuario;
+        apelido.value = nome_usuario
         username.innerHTML = nome_usuario;
         if(avatar_usuario == 1){
             img.src = '/img/avatares/luffy.jpg';
