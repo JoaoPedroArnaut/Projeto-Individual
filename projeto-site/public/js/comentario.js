@@ -13,9 +13,9 @@ function buscaComentarios() {
         for (var i = (comentarioo.length - 1); i >= 0; i--) {
             if (i == (comentarioo.length - 1)) {
                 comentarios.innerHTML = '';
-                if(form.msg.value != ''){
-                    montaMsg(form.msg.value, form.avatar.value, form.apelido.value);
-                }
+                // if(form.msg.value != ''){
+                //     montaMsg(form.msg.value, form.avatar.value, form.apelido.value);
+                // }
             }
             montaMsg(comentarioo[i].comentario, comentarioo[i].avatar,comentarioo[i].apelido)
         }
