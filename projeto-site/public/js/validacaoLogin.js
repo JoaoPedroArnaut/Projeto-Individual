@@ -34,7 +34,7 @@ function entrar() {
                 sessionStorage.nome_usuario_meuapp = json.apelido;
                 sessionStorage.avatar_usuario_meuapp = json.avatar;
 
-                window.location.href = 'comunidade.html';
+                window.location.href = 'comentarios.html';
             });
 
         } else {

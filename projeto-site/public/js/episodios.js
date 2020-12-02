@@ -4,8 +4,7 @@ for (var i = 1; i <= 10; i++) {
   requisicoes.push(requisicao);
 }
 
-var tabela = document.querySelectorAll('td');
-var teste = []
+var tabela = []
 
 Promise.all(requisicoes)
   .then(function (respostas) {
@@ -15,42 +14,39 @@ Promise.all(requisicoes)
     }));
   })
   .then(function (dados) {
+    console.log(dados);
+    console.log(dados[0]);
     for (var i = 0; i < dados.length; i++) {
-      teste.push(dados[i].episodes)
+      tabela.push(dados[i].episodes);
     }
-    console.log(teste);
-  }).then(function () {
-    tabelaCrecente(teste);
+    tabelaCrecente(tabela);
   })
 
-function tabelaCrecente(teste) {
+function tabelaCrecente(tabela) {
   var elemento = document.getElementById("tabela");
   while (elemento.firstChild) {
     elemento.removeChild(elemento.firstChild);
   }
-  for (var i = 0; i < teste.length; i++) {
-    var episodios = teste[i];
-    for (var ii = 0; ii < episodios.length; ii++) {
-      montaTabela(episodios[ii])
+  for (let i = 0; i < tabela.length; i++) {
+    var episodio = tabela[i];
+    for (let ii = 0; ii < episodio.length; ii++) {
+      montaTabela(episodio[ii]);
     }
   }
 }
 
-tabelaCrecente(teste);
-
-function tabelaDecresente(teste) {
+function tabelaDecresente(tabela) {
   var elemento = document.getElementById("tabela");
   while (elemento.firstChild) {
     elemento.removeChild(elemento.firstChild);
   }
-  for (var i = (teste.length - 1); i >= 0; i--) {
-    var episodios = teste[i];
-    for (var ii = (episodios.length - 1); ii >= 0; ii--) {
-      montaTabela(episodios[ii])
+  for (let i = (tabela.length - 1); i >= 0; i--) {
+    var episodio = tabela[i];
+    for (let ii = (episodio.length - 1); ii >= 0; ii--) {
+      montaTabela(episodio[ii]);
     }
   }
 }
-
 
 function montaTabela(episodes) {
   var episodesTr = montaTr(episodes);

@@ -42,12 +42,10 @@ function cadastrar() {
             window.location.href='login.html';
 
         } else {
-
             console.log('Erro de cadastro!');
             response.text().then(function (resposta) {
-                div_erro.innerHTML = resposta;
+                menssagemErro.innerHTML = resposta;
             });
-            finalizar_aguardar();
         }
     });
 
