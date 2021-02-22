@@ -1,5 +1,4 @@
-# projeto-modelo-individual-1ads-202
-Projeto Modelo para o Projeto Individual para as turmas de 1º Semestre - ADS - 2020/2 - Bandtec Digital School
+# projeto-individual-1ads-2020
+Projeto Individual para o de 1º Semestre - ADS - 2020/2 - Bandtec Digital School
 
-## Acesse o tutorial
-Indo em projeto-site/O-QUE-FAZER-AQUI.txt
+No qual eu deveria cria um site de tema livre utilizado JavaScript, html, css e conecta-lo a nuvem(azure)
