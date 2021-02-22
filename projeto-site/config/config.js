@@ -1,9 +1,9 @@
 module.exports = {
   production: {
-    username: 'joaoArnaut',
-    password: '#Gf49502294866',
+    username: 'ursernameazure',
+    password: 'sua senha',
     database: 'Projeto-individual',
-    host: 'servidorarnaut.database.windows.net',
+    host: 'localhost:3000',
     dialect: 'mssql',
     xuse_env_variable: 'DATABASE_URL',
     dialectOptions: {
